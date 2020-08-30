@@ -1,0 +1,11 @@
+--------------------------------------------------------------------------------
+This is just a plain text file used for working with Chapter 19_12.
+There is nothing special about this file. Please ignore it.
+--------------------------------------------------------------------------------
+Hello There! This sentence was added in Chapter19_12.cc!
+Hello There! This sentence was added in Chapter19_12.cc!
+Hello There! This sentence was added in Chapter19_12.cc!
+Hello There! This sentence was added in Chapter19_12.cc!
+Hello There! This sentence was added in Chapter19_12.cc!
+Hello There! This sentence was added in Chapter19_12.cc!
+Hello There! This sentence was added in Chapter19_12.cc!
