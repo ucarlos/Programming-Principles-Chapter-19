@@ -18,10 +18,10 @@ template<typename T> void add_vectors(vector<T> &vector1, vector<T> &vector2){
     // In this case, set the number of elements added to vector 1
     // to be either vector2 or vector1 (if vector1.size < vector2.size)
     unsigned int size = (vector1.size() <= vector2.size()) ? vector1.size()
-	: vector2.size();
+		: vector2.size();
 
     for (unsigned int i = 0; i < size; i++)
-	vector1[i] += vector2[i];
+		vector1[i] += vector2[i];
 }
 
 int main(void){
@@ -32,7 +32,7 @@ int main(void){
 
     cout << "Results of adding both vectors:\n";
     for (int i : list1)
-	cout << i << " ";
+		cout << i << " ";
     cout << endl;
     
 }

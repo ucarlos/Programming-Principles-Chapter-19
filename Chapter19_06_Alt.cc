@@ -77,7 +77,7 @@ template<class T> Number<T> Number<T>::operator*(const Number<T> &i){
 
 template<class T> Number<T> Number<T>::operator/(const Number<T> &i){
     if (!i.val)
-	throw std::runtime_error("Cannot divide by zero.");
+		throw std::runtime_error("Cannot divide by zero.");
 
     Number<T> result(this->val / i.val);
     return result;
@@ -85,7 +85,7 @@ template<class T> Number<T> Number<T>::operator/(const Number<T> &i){
 
 template<class T> Number<T> Number<T>::operator%(const Number<T> &i){
     if (!i.val)
-	throw std::runtime_error("Cannot divide by zero.");
+		throw std::runtime_error("Cannot divide by zero.");
 
     T val = static_cast<T>(fmodl(this->val, i.val));
     Number<T> num(val);

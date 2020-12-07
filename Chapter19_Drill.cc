@@ -44,9 +44,9 @@ int main(void){
 
     cout << "Testing output:\n";
     cout << "Temp1: " << temp.get() << "\n"
-	 << "Temp2: " << temp1.get() << "\n"
-	 << "Temp3: " << temp2.get() << "\n"
-	 << "Temp4: " << temp3.get().size() << "\n";
+		 << "Temp2: " << temp1.get() << "\n"
+		 << "Temp3: " << temp2.get() << "\n"
+		 << "Temp4: " << temp3.get().size() << "\n";
 
     cout << "Testing read_val" << endl;
 

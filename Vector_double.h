@@ -19,7 +19,7 @@ class vector{
 public:
     vector() : sz{0}, elem{nullptr}, space{0} { }
     explicit vector(int s) : sz{s}, elem{new double[s]}, space{s}{
-	for (int i = 0; i < sz; i++) elem[i] = 0;
+		for (int i = 0; i < sz; i++) elem[i] = 0;
     }
 
     vector(const vector&); // Copy constructor

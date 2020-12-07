@@ -41,7 +41,7 @@ int main(void){
 
     std::cout << "Contents of table: \n";
     for (const auto &i : table)
-	std::cout << "[" << i.get_first() << " " << i.get_second() << "]\n";
+		std::cout << "[" << i.get_first() << " " << i.get_second() << "]\n";
 
     std::cout << std::endl;
 }

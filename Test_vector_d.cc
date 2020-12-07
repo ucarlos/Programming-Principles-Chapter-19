@@ -21,7 +21,7 @@ int main(void){
 
     cout << "Printing values of d (Before): \n";
     for (int i = 0; i < d.size(); i++)
-	cout << d[i] << " ";
+		cout << d[i] << " ";
     cout << endl;
     vector e;
     e.push_back(10);
@@ -32,13 +32,13 @@ int main(void){
 
     cout << "Printing values of e: \n";
     for (int i = 0; i < e.size(); i++)
-	cout << e[i] << " ";
+		cout << e[i] << " ";
     cout << endl;
     
     d = e;
     cout << "Printing values of d (After): \n";
     for (int i = 0; i < d.size(); i++)
-	cout << d[i] << " ";
+		cout << d[i] << " ";
     cout << endl;
     
 

@@ -53,7 +53,7 @@ template<typename T> T* my_allocator<T>::allocate(int n){
 
 template<typename T> void my_allocator<T>::deallocate(T *p, int n){
     for (int i = 0; i < n; i++)
-	free(p[i]);
+		free(p[i]);
 }
 
 template<typename T> void my_allocator<T>::construct(T *p, const T &v) {

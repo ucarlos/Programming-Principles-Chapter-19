@@ -68,7 +68,7 @@ Int Int::operator*(const Int &i){
 
 Int Int::operator/(const Int &i){
     if (!i.val)
-	throw std::runtime_error("Cannot divide by zero.");
+		throw std::runtime_error("Cannot divide by zero.");
 
     Int result(this->val / i.val);
     return result;
@@ -82,8 +82,8 @@ int main(void){
     i4 = i1 * i2 * i3;
 
     std::cout << "i1: " << i1.value() << "\n"
-	      << "i2: " << i2.value() << "\n"
-	      << "i3: " << i3.value() << "\n"
-	      << "i4: " << i4.value() << "\n";
+			  << "i2: " << i2.value() << "\n"
+			  << "i3: " << i3.value() << "\n"
+			  << "i4: " << i4.value() << "\n";
     
 }

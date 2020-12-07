@@ -17,7 +17,7 @@
 using namespace std;
 
 class God{
-    public:
+public:
     string name;
     string mythology;
     string vehicle;
@@ -37,7 +37,7 @@ public:
     explicit Link(T newval) : value{newval} { }
     
     Link(T newval, Link<T> *previous, Link<T> *next) :
-	value{newval}, prev{previous}, succ{next} { }
+		value{newval}, prev{previous}, succ{next} { }
     
     Link<T>* insert(Link<T> *link);
     Link<T>* add(Link<T> *link);
@@ -72,9 +72,9 @@ template<typename T> Link<T>* Link<T>::add_ordered(Link<T> *link){
     Link<T> *temp = this;
     // First use the <= operator. if value < link.value, break.
     while (temp->succ != nullptr){
-	if (this->value <= temp->value)
-	    break;
-	else temp = temp->succ;
+		if (this->value <= temp->value)
+			break;
+		else temp = temp->succ;
     }
 
     // If temp->succ is really null, then just return the add.
@@ -85,13 +85,13 @@ template<typename T> Link<T>* Link<T>::add_ordered(Link<T> *link){
 
 bool operator<=(const God &god1, const God &god2){
     return (god1.name <= god2.name) && (god1.mythology <= god2.mythology)
-	&& (god1.vehicle <= god2.vehicle) && (god1.weapon <= god2.weapon);
+		&& (god1.vehicle <= god2.vehicle) && (god1.weapon <= god2.weapon);
 
 }
 
 bool operator==(const God &god1, const God &god2){
     return (god1.name == god2.name) && (god1.mythology == god2.mythology)
-	&& (god1.vehicle == god2.vehicle) && (god1.weapon == god2.weapon);
+		&& (god1.vehicle == god2.vehicle) && (god1.weapon == god2.weapon);
 }
 
 bool operator!=(const God &god1, const God &god2){
@@ -117,8 +117,8 @@ template<typename T> Link<T>* Link<T>::add(Link<T> *link){
     if (this == nullptr) return link;
     link->prev = this;
     if (succ){
-	succ->prev = link;
-	link->succ = succ;
+		succ->prev = link;
+		link->succ = succ;
     }
 
     succ = link;
@@ -152,9 +152,9 @@ istream& operator>>(istream &is, Link<God> link) {
 }
 ostream& operator<<(ostream &os, const God &god){
     return os << "Name: " << god.name << endl
-	      << "Mythology: " << god.mythology << endl
-	      << "Vehicle: " << god.vehicle << endl
-	      << "Weapon: " << god.weapon << endl;
+			  << "Mythology: " << god.mythology << endl
+			  << "Vehicle: " << god.vehicle << endl
+			  << "Weapon: " << god.weapon << endl;
 }
 
 
@@ -163,8 +163,8 @@ void clear_buffer(Link<God> *link){
     link = begin(link);
     
     while (link->next() != nullptr){
-	link = link->next();
-	delete link->previous();
+		link = link->next();
+		delete link->previous();
     }
     // Now delete link
     delete link;
@@ -172,13 +172,13 @@ void clear_buffer(Link<God> *link){
 
 void print_all(Link<God> *list){
     if (!list){
-	cerr << "Warning: This list is empty.\n";
-	return;
+		cerr << "Warning: This list is empty.\n";
+		return;
     }
 
     while (list){
-	cout << list->value;
-	list = list->next();
+		cout << list->value;
+		list = list->next();
     }
 
 
@@ -188,10 +188,10 @@ void add_to_list(Link<God> *list, vector<string> &god_list, string mythology){
     Link<God> *new_link = nullptr;
     God temp_god;
     for (int i = 0; i < god_list.size(); i++){
-       temp_god = God(god_list[i], mythology, "", "");
-       new_link = new Link<God>(temp_god);
-       list->add_ordered(new_link);
-       list = begin(list);
+		temp_god = God(god_list[i], mythology, "", "");
+		new_link = new Link<God>(temp_god);
+		list->add_ordered(new_link);
+		list = begin(list);
     
     }
 

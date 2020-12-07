@@ -40,12 +40,12 @@ public:
     counted_ptr(T *pt, int count, int *u_count, T &val);
 
     ~counted_ptr(){
-	if (*use_count <= 1){
-	    delete use_count;
-	    delete[] ptr;
-	}
-	else
-	    *use_count = *use_count - 1;
+		if (*use_count <= 1){
+			delete use_count;
+			delete[] ptr;
+		}
+		else
+			*use_count = *use_count - 1;
     }
 
     T& operator*() { return *ptr; }
@@ -68,15 +68,15 @@ private:
 // I can't check if it is valid or not.
 template<typename T> counted_ptr<T>::counted_ptr(T * pt, int count, int *u_count, T &val){
     if (count <= 0)
-	throw runtime_error("Cannot have a negative count as an argument.");
+		throw runtime_error("Cannot have a negative count as an argument.");
     if (!pt)
-	throw runtime_error("Cannot construct a counted_ptr using a nullptr and a count argument.");
+		throw runtime_error("Cannot construct a counted_ptr using a nullptr and a count argument.");
     
     ptr = pt;
     use_count = u_count;
     
     for (int i = 0; i < count; i++)
-	ptr[i] = val;
+		ptr[i] = val;
     
 }
 

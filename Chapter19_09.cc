@@ -17,20 +17,20 @@ vector& vector::operator=(const vector& v){ // Copy assignment
     if (this == &v) return *this; // Self-assignment, no work needed
 
     if (v.sz <= space){ // enough space, no need for new allocation
-	for (int i = 0; i < v.sz; i++){
-	    // Should I destroy the current element, and construct it afterwords?
-	    alloc.destroy(&elem[i]);
-	    alloc.construct(&elem[i], v.elem[i]);
+		for (int i = 0; i < v.sz; i++){
+			// Should I destroy the current element, and construct it afterwords?
+			alloc.destroy(&elem[i]);
+			alloc.construct(&elem[i], v.elem[i]);
 	    
-	}
+		}
 
-	sz = v.sz;
-	return *this;
+		sz = v.sz;
+		return *this;
     }
 
     double *p = alloc.allocate(v.sz);
     for (int i = 0; i < v.sz; i++)
-	alloc.construct(&v.elem[i], p[i]);
+		alloc.construct(&v.elem[i], p[i]);
     alloc.deallocate(elem, space);
     
     sz = space = v.sz; // Set new size

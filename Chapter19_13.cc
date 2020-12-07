@@ -21,18 +21,18 @@ using namespace std;
 class Tracer{
 public:
     Tracer() {
-	cout << "Calling Tracer's constructor with no arguments!\n";
+		cout << "Calling Tracer's constructor with no arguments!\n";
     }
     
     explicit Tracer(string s) : info{s} {
-	cout << "Calling Tracer's constructor with a string argument \""
-	     << info << "\" : \n";
+		cout << "Calling Tracer's constructor with a string argument \""
+			 << info << "\" : \n";
 
     }
 
     ~Tracer(){
-	cout << "Calling Tracer's destructor! with string \""
-	     << info << "\"\n";
+		cout << "Calling Tracer's destructor! with string \""
+			 << info << "\"\n";
 
     }
 
@@ -50,7 +50,7 @@ private:
 
 Tracer::Tracer(Tracer &t){
     cout << "Calling Tracer's constructor with a Tracer& argument "
-	 << " to copy:\n";
+		 << " to copy:\n";
     
     info = t.get_info();
 

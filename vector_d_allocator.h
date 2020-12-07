@@ -9,13 +9,13 @@ public:
     
     vector() : sz{0}, elem{nullptr}, space{0} { }
     explicit vector(int s) : sz{s}, elem{new double[s]}, space{s}{
-	for (int i = 0; i < sz; i++) elem[i] = 0;
+		for (int i = 0; i < sz; i++) elem[i] = 0;
     }
     
     vector(initializer_list<double> lst){
-	space = sz = lst.size();
-	elem = new double[sz];
-	copy( lst.begin(),lst.end(),elem);
+		space = sz = lst.size();
+		elem = new double[sz];
+		copy( lst.begin(),lst.end(),elem);
     }
     
     vector(const vector&); // Copy constructor

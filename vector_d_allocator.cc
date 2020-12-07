@@ -6,7 +6,7 @@ vector::vector(const vector& v){ // Copy constructor
 
     double *p = alloc.allocate(v.sz);
     for (int i = 0; i < v.sz; i++){
-	alloc.construct(&v.elem[i], p[i]);
+		alloc.construct(&v.elem[i], p[i]);
         
     }
     alloc.deallocate(elem, space);
@@ -23,20 +23,20 @@ vector& vector::operator=(const vector& v){ // Copy assignment
     if (this == &v) return *this; // Self-assignment, no work needed
 
     if (v.sz <= space){ // enough space, no need for new allocation
-	for (int i = 0; i < v.sz; i++){
-	    // Should I destroy the current element, and construct it afterwords?
-	    alloc.destroy(&elem[i]);
-	    alloc.construct(&elem[i], v.elem[i]);
+		for (int i = 0; i < v.sz; i++){
+			// Should I destroy the current element, and construct it afterwords?
+			alloc.destroy(&elem[i]);
+			alloc.construct(&elem[i], v.elem[i]);
 	    
-	}
+		}
 
-	sz = v.sz;
-	return *this;
+		sz = v.sz;
+		return *this;
     }
 
     double *p = alloc.allocate(v.sz);
     for (int i = 0; i < v.sz; i++)
-	alloc.construct(&v.elem[i], p[i]);
+		alloc.construct(&v.elem[i], p[i]);
     alloc.deallocate(elem, space);
     
     sz = space = v.sz; // Set new size
@@ -79,7 +79,7 @@ void vector::resize(int newsize){ //resize
     reserve(newsize);
     
     for (int i = sz; i < newsize; i++) // Initialize new elements
-	elem[i] = 0;
+		elem[i] = 0;
     
 
     sz = newsize;
@@ -91,9 +91,9 @@ void vector::resize(int newsize){ //resize
 void vector::push_back(double d){ //push_back
     // Increase vector size by one; initialize the new element with d
     if (space == 0)
-	reserve(8);
+		reserve(8);
     else if (sz == space)
-	reserve(2 * space); // Get more space
+		reserve(2 * space); // Get more space
     
     alloc.construct(&elem[sz], d);
     sz++;
@@ -108,7 +108,7 @@ void vector::reserve(int newalloc){ // reserve
     double *p = alloc.allocate(newalloc);
 
     for (int i = 0; i < sz; i++) // Copy old elements
-	alloc.construct(&elem[i], p[i]);
+		alloc.construct(&elem[i], p[i]);
 
     alloc.deallocate(elem, space); // deallocate old space
     elem = p;

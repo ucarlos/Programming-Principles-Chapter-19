@@ -56,7 +56,7 @@ Int Int::operator*(const Int &i){
 
 Int Int::operator/(const Int &i){
     if (!i.value)
-	throw runtime_error("Error: Division by Zero.");
+		throw runtime_error("Error: Division by Zero.");
 
     int temp = this->value / i.value;
     return Int{temp};
